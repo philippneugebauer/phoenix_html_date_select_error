@@ -1,7 +1,15 @@
 defmodule DateSelectErrorWeb.SearchController do
   use DateSelectErrorWeb, :controller
 
-  def index(conn, _params) do
+  alias DateSelectError.Search
+
+  def index(conn, params) do
+
+    search = Search.cast(params)
+
+    require IEx
+    IEx.pry
+
     render conn, "index.html"
   end
 end
